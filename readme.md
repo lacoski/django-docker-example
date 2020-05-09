@@ -19,3 +19,4 @@ docker-compose up -d
 
 https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
 
+https://viblo.asia/p/su-dung-docker-va-ca-docker-compose-cho-du-an-django-AQrMJbWNM40E
