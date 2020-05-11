@@ -1,10 +1,14 @@
-version: '3.8'
+version: '3.4'
 
 services:
-  web:
-    build: ./
+  djangodockerexample:
+    image: djangodockerexample
+    build:
+      context: .
+      dockerfile: Dockerfile.test
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app/
     ports:
       - 8000:8000
+      - 3000:3000
