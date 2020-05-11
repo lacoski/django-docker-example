@@ -13,4 +13,6 @@ sudo docker run -i -t -p 127.0.0.1:8000:8000 ubuntu
 ```
 sudo docker run -i -t -p 127.0.0.1:8000:8000 \
 -v /home/thanhnb/data/repos/GitDocker/django-docker-example:/home/code ubuntu
+
+docker exec -it eade101e0aa3 python manage.py shell
 ```

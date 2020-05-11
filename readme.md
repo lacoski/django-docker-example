@@ -9,6 +9,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Truy cập container
+```
+docker ps
+docker exec -it 486cce331130 bash
+```
+
 ## Build & Run 
 ```
 docker build -t thanhnb-django:v1 .

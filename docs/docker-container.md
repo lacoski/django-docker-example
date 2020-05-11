@@ -1,0 +1,1 @@
+docker run --name test -it ubuntu:bionic
