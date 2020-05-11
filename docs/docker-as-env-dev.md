@@ -16,3 +16,5 @@ sudo docker run -i -t -p 127.0.0.1:8000:8000 \
 
 docker exec -it eade101e0aa3 python manage.py shell
 ```
+
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
