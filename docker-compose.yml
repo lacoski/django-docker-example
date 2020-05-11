@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  djangodockerexample:
-    image: djangodockerexample
+  web:
+    image: djangowebapp
     build:
       context: .
       dockerfile: Dockerfile.test
@@ -12,3 +12,5 @@ services:
     ports:
       - 8000:8000
       - 3000:3000
+    env_file:
+      - ./.env.dev
