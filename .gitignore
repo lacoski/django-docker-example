@@ -13,3 +13,4 @@ src/project/project/celery.py
 src/project/project/*.sqlite3
 .pytest_cache/*
 *.sqlite3
+storages/
