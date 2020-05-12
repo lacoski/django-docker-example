@@ -7,6 +7,12 @@ source env/bin/activate
 pip install -r requirements/dev.txt
 python manage.py migrate
 python manage.py runserver
+
+
+F401, E231, E231, E302, W292, W293, E501
+
+flake8 --select E123,W503 books_cbv/
+flake8 --select E123,W503 books_fbv/
 ```
 
 ## Truy cập container
