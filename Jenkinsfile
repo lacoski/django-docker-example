@@ -3,6 +3,7 @@ node {
 
     stage('Run test') {
         sh 'echo "success"'
+        sh 'echo "success2"'
     }
 
     stage('Clone repository') {
