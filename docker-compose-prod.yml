@@ -2,17 +2,14 @@ version: '3.4'
 
 services:
   web:
-    image: djangoprod
     build:
       context: .
       dockerfile: Dockerfile.prod
     command: gunicorn project.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - ./:/usr/src/app/
-      - static_volume:/usr/src/app/static
+      - static_volume:/home/app/web/static
     ports:
-      - 8000:8000
-      - 3000:3000
+      - 8000
     env_file:
       - ./.env.prod
     depends_on:
@@ -28,7 +25,7 @@ services:
     ports:
       - 1337:80
     volumes:
-      - static_volume:/usr/src/app/static
+      - static_volume:/home/app/web/static
     depends_on:
       - web
 
