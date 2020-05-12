@@ -22,4 +22,12 @@ node {
         }
     }
 
+    stage('Deploy Source Code') {
+        steps {
+            echo "Running source code in a fully containerized environment..."    
+            sh 'docker-compose -f docker-compose-prod.yml up -d --build'
+        }
+    }
+  }
+
 }
