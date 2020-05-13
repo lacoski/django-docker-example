@@ -7,7 +7,7 @@ node {
         updateGitlabCommitStatus(name: 'Start Clone repository', state: 'success')
     }
 
-    stage('Start Build gitlab ABC XYZ') {
+    stage('Start Build gitlab') {
         echo 'Notify GitLab'
     }
 
@@ -36,19 +36,5 @@ node {
 
     stage('End Build gitlab') {
         echo 'Notify GitLab'
-    }
-
-    stage('Clear old version') {
-        updateGitlabCommitStatus(name: 'Deploy', state: 'running')
-
-        echo "Running source code in a fully containerized environment..."    
-        sh 'docker-compose -f docker-compose-prod.yml down -v'
-    }
-
-    stage('Deploy Source Code') {
-        echo "Running source code in a fully containerized environment..."    
-        sh 'docker-compose -f docker-compose-prod.yml up -d --build'
-
-        updateGitlabCommitStatus(name: 'Deploy', state: 'success')
     }
 }
