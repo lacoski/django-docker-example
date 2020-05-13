@@ -6,12 +6,8 @@ node {
     }
 
     stage('Start Build gitlab') {
-        stage('gitlab') {
-            steps {
-                echo 'Notify GitLab'
-                updateGitlabCommitStatus(name: 'build', state: 'pending')
-            }
-        }
+        echo 'Notify GitLab'
+        updateGitlabCommitStatus(name: 'build', state: 'pending')
     }
 
     stage('Build image') {
@@ -32,12 +28,8 @@ node {
     }
 
     stage('End Build gitlab') {
-        stage('gitlab') {
-            steps {
-                echo 'Notify GitLab'
-                updateGitlabCommitStatus(name: 'build', state: 'success')
-            }
-        }
+        echo 'Notify GitLab'
+        updateGitlabCommitStatus(name: 'build', state: 'success')
     }
 
     stage('Clear old version') {
