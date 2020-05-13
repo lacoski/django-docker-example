@@ -7,7 +7,7 @@ node {
         updateGitlabCommitStatus(name: 'Start Clone repository', state: 'success')
     }
 
-    stage('Start Build gitlab') {
+    stage('Start Build gitlab Development') {
         echo 'Notify GitLab'
     }
 
