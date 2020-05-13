@@ -49,4 +49,4 @@ class BookCBVTestCase(TestCase):
         lion = Book.objects.get(name="lion")
         cat = Book.objects.get(name="cat")
         self.assertEqual(lion.pages, 1)
-        self.assertEqual(cat.pages, 3)
+        self.assertEqual(cat.pages, 2)
