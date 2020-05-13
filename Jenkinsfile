@@ -5,6 +5,14 @@ node {
         checkout scm
     }
 
+    stage('gitlab') {
+        steps {
+            echo 'Notify GitLab'
+            updateGitlabCommitStatus name: 'build', state: 'pending'
+            updateGitlabCommitStatus name: 'build', state: 'success'
+        }
+    }
+
     stage('Build image') {
         app = docker.build("djangobasic:${env.BUILD_ID}")
     }
