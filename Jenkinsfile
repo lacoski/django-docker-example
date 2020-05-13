@@ -5,11 +5,10 @@ node {
         checkout scm
     }
 
-    stage('gitlab') {
+    stage('Start Build gitlab') {
         steps {
             echo 'Notify GitLab'
             updateGitlabCommitStatus name: 'build', state: 'pending'
-            updateGitlabCommitStatus name: 'build', state: 'success'
         }
     }
 
@@ -27,6 +26,13 @@ node {
     stage('Run Test Django') {
         app.inside {
             sh 'python manage.py test'
+        }
+    }
+
+    stage('End Build gitlab') {
+        steps {
+            echo 'Notify GitLab'
+            updateGitlabCommitStatus name: 'build', state: 'success'
         }
     }
 
