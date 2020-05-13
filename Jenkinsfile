@@ -6,9 +6,11 @@ node {
     }
 
     stage('Start Build gitlab') {
-        steps {
-            echo 'Notify GitLab'
-            updateGitlabCommitStatus name: 'build', state: 'pending'
+        stage('gitlab') {
+            steps {
+                echo 'Notify GitLab'
+                updateGitlabCommitStatus name: 'build', state: 'pending'
+            }
         }
     }
 
@@ -30,9 +32,11 @@ node {
     }
 
     stage('End Build gitlab') {
-        steps {
-            echo 'Notify GitLab'
-            updateGitlabCommitStatus name: 'build', state: 'success'
+        stage('gitlab') {
+            steps {
+                echo 'Notify GitLab'
+                updateGitlabCommitStatus name: 'build', state: 'success'
+            }
         }
     }
 
