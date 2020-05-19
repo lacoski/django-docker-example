@@ -11,3 +11,7 @@ docker container rm $(docker container ls -aq)
 docker logs -f 486cce331130
 ```
 
+## Xóa Image build lỗi
+```
+docker rmi $(docker images -f "dangling=true" -q)
+```
